@@ -5,6 +5,8 @@ screens in the office.
 
 Dashboard is powered by [Dashing][].
 
+![dashboard](https://s3-eu-west-1.amazonaws.com/kabisa/gh-dashboard.png)
+
 # Benefits
 
 Dashboard gives you a quick overview of the most important data sets for your
