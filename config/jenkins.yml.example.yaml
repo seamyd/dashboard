@@ -1,0 +1,5 @@
+---
+committers:
+  john.doe: 'John Doe'    # Use this to map git author names to the names of
+  belgian-player: 'Niels' # your organization's employees. Used when showing who
+                          # broke the Jenkins build.

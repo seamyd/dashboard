@@ -1,0 +1,8 @@
+%h1.title{ data: { bind: 'title' } }
+.comment-container
+  %h3
+    %img{ data: { 'bind-src' => 'current_comment.avatar' } }
+    %span.name{ data: { bind: 'current_comment.name' } }
+  %p.comment{ data: { bind: 'quote' } }
+
+%p.more-info{ 'data-bind' => 'moreinfo | raw' }

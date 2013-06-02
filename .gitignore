@@ -1,0 +1,4 @@
+*DS_STORE
+.env
+config/config.yml
+config/jenkins.yml

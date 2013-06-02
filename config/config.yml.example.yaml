@@ -1,0 +1,70 @@
+---
+dashboards:
+  myboard:
+    title: My Awesome Dashboard
+    widget_width: 360
+    widget_height: 170
+    num_columns: 5
+
+    widgets:
+    - view: List
+      event: zendesk-issues
+      sizey: 2
+
+    - view: Number
+      event: zendesk-counter
+      sizey: 2
+      background_icon: comment-alt
+      data:
+        icon: comment-alt   # used to switch between background icons. `icon` is
+        icon-alt: comments  # the default, `icon-alt` is shown on activity.
+
+    - view: Number
+      event: nagios-counter
+      sizey: 2
+      background_icon: hdd
+
+    - view: Comments
+      event: twitter-stream
+      sizex: 3
+
+    - view: Project
+      title: My Company Project
+      event: company_project  # event's name should equal Jenkins job name.
+
+jobs:
+- event: project
+  class: Project
+  every: 10s
+
+- event: twitter-stream
+  class: TwitterSearch
+  every: 10m
+  data:
+    q: '#ruby OR #rails OR #java -job'  # build the search query using the
+    lang: en                            # official Twitter search specification.
+    rpp: 100                            # dev.twitter.com/docs/api/1/get/search
+
+- event: zendesk-issues
+  class: Zendesk
+  every: 1m
+  data:
+    type: Issues
+    views:
+      client1: 54321  # Key represents html list titles, value represents
+      client2: 49264  # counter to show next to name. ex: use this to show total
+      client3: 18652  # number of tickets per client view in Zendesk.
+
+- event: zendesk-counter
+  class: Zendesk
+  every: 1m
+  data:
+    type: Counter
+    notice: 12345   # Set the Zendesk view ID to count the number of notices or
+    warning: 67890  # warnings. ex: set 'New Tickets' view to notice.
+
+- event: nagios-counter
+  class: Nagios
+  every: 10s
+  data:
+    type: Counter
