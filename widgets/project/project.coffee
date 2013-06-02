@@ -24,6 +24,8 @@ class Dashing.Project extends Dashing.Widget
         txt = "committers since build broke:<br />#{data.culprits.join(', ')}"
       else
         txt = 'build broken by unknown source'
+    else
+      txt = ''
 
     $(@node).find('.culprits').html(txt)
 
