@@ -28,11 +28,17 @@ protected
     end
 
     def criticals
-      api.service_status(service_status_types: :critical).reject{ |s| s.acknowledged }
+      services(:critical)
     end
 
     def warnings
-      api.service_status(service_status_types: :warning)
+      services(:warning)
+    end
+
+    def services(type, opts = { include_acknowledged: false })
+      services = api.service_status(service_status_types: type)
+      services.reject!{ |s| s.acknowledged } unless opts[:include_acknowledged]
+      services
     end
   end
 end
