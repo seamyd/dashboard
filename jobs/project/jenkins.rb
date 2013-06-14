@@ -69,7 +69,7 @@ class Project < Dashing::Job
     def culprits(json)
       committers = jenkins_config['committers']
       json['culprits'].each_with_object([]) do |culprit, array|
-        array << committers[culprit['fullName']]
+        array.push(committers[culprit['fullName']] || culprit['fullName'])
       end
     end
 
