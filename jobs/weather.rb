@@ -11,7 +11,7 @@ class Weather < Dashing::Job
       response = http.request(Net::HTTP::Get.new("/forecastrss?w=#{woeid}&u=c"))
       weather_data = XmlSimple.xml_in(response.body, { 'ForceArray' => false })['channel']['item']['condition']
       weather_location = XmlSimple.xml_in(response.body, { 'ForceArray' => false })['channel']['location']
-      send_event(element, { :temp => "#{weather_data['temp']}&deg;C",
+      send_event(element, { :temp => weather_data['temp'],
                               :condition => weather_data['text'],
                               :climacon => climacon_class(weather_data['code'])})
     end

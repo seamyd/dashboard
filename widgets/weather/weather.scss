@@ -12,21 +12,26 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);;
 // ----------------------------------------------------------------------------
 .widget-weather {
 
-  background-color: $background-color;
+  background-color: none;
 
   .title {
     font-family: 'Ubuntu Condensed', 'Helvetica Nue';
-    font-size: 2em;
+    font-size: 3em;
     color: $title-color;
   }
 
-  .temp {
+  .temp-collection {
     font-family: 'Concert One', cursive;
-    font-size: 6em;
+    font-size: 4.5em;
     color: $value-color;
+
+    i {
+      width: auto !important;
+    }
   }
 
   .condition {
+    margin-top: 10px;
     font-weight: 500;
     font-size: 1em;
     color: $value-color;

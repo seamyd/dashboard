@@ -1,4 +1,5 @@
-%i.climacon.icon-background
-%h1.temp{ data: { bind: 'temp | raw' } }
+%h1.temp-collection
+  %span.temp{ data: { bind: 'temp | append "&deg;C" | raw' } }
+  %i.climacon.icon-weather.sun
 %h3.title{ data: { bind: 'title' } }
 %p.condition{ data: { bind: 'condition' } }
