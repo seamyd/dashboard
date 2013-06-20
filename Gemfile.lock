@@ -93,6 +93,7 @@ GEM
     thor (0.18.1)
     tilt (1.4.1)
     tzinfo (0.3.37)
+    xml-simple (1.1.2)
 
 PLATFORMS
   ruby
@@ -104,3 +105,4 @@ DEPENDENCIES
   haml (~> 4.0.3)
   httparty (~> 0.8.3)
   nagiosharder!
+  xml-simple (~> 1.1.2)

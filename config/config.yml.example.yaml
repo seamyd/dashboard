@@ -32,6 +32,18 @@ dashboards:
       title: My Company Project
       event: company_project  # event's name should equal Jenkins job name.
 
+    - view: Weather
+      title: Weert
+      event: weather-weert
+      woeid: 734564
+      sizey: 2
+
+    - view: Weather
+      title: Athene
+      event: weather-athene
+      woeid: 946738
+      sizey: 2
+
 jobs:
 - event: project
   class: Project
@@ -68,3 +80,7 @@ jobs:
   every: 10s
   data:
     type: Counter
+
+- event: Weather
+  class: Weather
+  every: 15m
