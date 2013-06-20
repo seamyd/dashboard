@@ -44,6 +44,12 @@ dashboards:
       woeid: 946738
       sizey: 2
 
+    - view: Weather
+      title: Lissabon
+      event: weather-lissabon
+      woeid: 742676
+      sizey: 2
+
 jobs:
 - event: project
   class: Project
