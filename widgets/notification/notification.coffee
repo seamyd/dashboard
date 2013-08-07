@@ -1,4 +1,4 @@
-class Dashing.Text extends Dashing.Widget
+class Dashing.Notification extends Dashing.Widget
 
   ready: ->
     if $(@node).find('p.text').html() is ''
