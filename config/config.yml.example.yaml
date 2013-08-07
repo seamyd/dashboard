@@ -7,6 +7,12 @@ dashboards:
     num_columns: 5
 
     widgets:
+    - view: Notification
+      data:
+        text: 'Your daily notification goes here...'
+      sizex: 3
+      sizey: 1
+
     - view: List
       event: zendesk-issues
       sizey: 2
