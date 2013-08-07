@@ -17,4 +17,5 @@ Dashing.on 'ready', ->
       widget_base_dimensions: Dashing.widget_base_dimensions
       avoid_overlapped_widgets: !Dashing.customGridsterLayout
 
-    $('.gridster ul:first').gridster().data('gridster').disable()
+    window.grid = $('.gridster ul:first').gridster().data('gridster')
+    window.grid.disable()
