@@ -1,15 +1,19 @@
 @import 'bourbon/bourbon';
 
-$background-error-color:   #A31F1F;
+$background-notice-color-1: #eeae32;
+$background-notice-color-2: #ff9618;
+$text-notice-color: #fff;
 
-@include keyframes(pulsating-failed) {
-    0% {background-color: $background-error-color;}
-   50% {background-color: lighten($background-error-color, 20%);}
-  100% {background-color: $background-error-color;}
+@-webkit-keyframes active-notification {
+  0%   { background-color: $background-notice-color-1; }
+  50%  { background-color: $background-notice-color-2; }
+  100% { background-color: $background-notice-color-1; }
 }
 
-.widget-text {
-  @include animation(pulsating-failed 3s infinite ease);
+.widget-notification {
+  color: $text-notice-color;
+  background-color: $background-notice-color-1;
+  @include animation(active-notification 10s infinite ease);
 
   p.text {
     font-family: 'Ubuntu Condensed', 'Helvetica Nue';
