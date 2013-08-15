@@ -7,3 +7,5 @@ gem 'httparty', '~> 0.8.3'
 gem 'dotenv', '~> 0.7.0'
 gem 'haml', '~> 4.0.3'
 gem 'xml-simple', '~> 1.1.2'
+
+gem 'nokogiri'

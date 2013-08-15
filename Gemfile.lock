@@ -105,4 +105,5 @@ DEPENDENCIES
   haml (~> 4.0.3)
   httparty (~> 0.8.3)
   nagiosharder!
+  nokogiri
   xml-simple (~> 1.1.2)
